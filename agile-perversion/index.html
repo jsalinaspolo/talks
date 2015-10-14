@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Agile Perversion</title>
+
+    <meta name="author" content="Javier Salinas">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+    <link rel="stylesheet" href="css/post.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Agile perversion</h1>
+
+            <p>
+                <small>by <a href="http://jspcore.com">Javier Salinas</a> / <a href="http://twitter.com/MuSTa1nE">@MuSTa1nE</a>
+                </small>
+            </p>
+        </section>
+        <section>
+            <h3>About me</h3>
+            <aside class="notes">
+                <ul>
+                    <li>Software Developer</li>
+                    <li>I am from Barcelona and after being working for a Business Consultancy company here.
+                        I realised that to continue working close to the technology I had to leave
+                    </li>
+                    <li>I went to Moscow and from there to London, where I went for 3 years...
+                        Now I am already 3 years and planning 3 years more.
+                    </li>
+                    <li>I am a passionate developer and motivated in simple designs, clean code, TDD, DDD and so on</li>
+                </ul>
+            </aside>
+        </section>
+        <section>
+            <h3>What is this talk about?</h3>
+            <aside class="notes">
+                <ul>
+                    <li>This talk is about how to deliver better software sooner.</li>
+                    <li>And of course how Agile has been perverted by the methodologies.</li>
+                </ul>
+            </aside>
+        </section>
+        <section>
+            <h3>Agenda</h3>
+            <ul>
+                <li>Waterfall</li>
+                <li>Scrum</li>
+                <li>Agile</li>
+            </ul>
+        </section>
+        <section>
+            <section>
+                <p>Waterfall model</p>
+                <img data-src="img/waterfall_model.svg">
+                <aside class="notes">
+                    I don't want to go through waterfall as all of us might know, but just to point out some of the
+                    problems
+                </aside>
+            </section>
+            <section>
+                <h3>Waterfall problems</h3>
+                <ul>
+                    <li class="fragment">No working software is produced until late.</li>
+                    <li class="fragment">High amounts of risk and uncertainty.</li>
+                    <li class="fragment">
+                        It is difficult to measure progress within stages.
+                    </li>
+                    <li class="fragment">Cannot accommodate changing requirements.</li>
+                    <li class="fragment">Integration is done as a "big-bang. at the very end, which doesn't allow
+                        identifying any
+                        technological or business bottleneck or challenges early.
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <img class="fragment" data-src="img/waterfall-planning.jpg">
+                <aside class="notes">
+                    <ul>
+                        <li>Remembers me that!</li>
+                        <li>making all plans upfront while waiting for the baby (as the parents in the room might know,
+                            most
+                            of it is waste time)
+                        </li>
+                        <li>
+                            After all, requirements changes and u should to adapt to them
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <img data-src="img/waterfall-fail.jpg">
+            </section>
+        </section>
+        <section>
+            <section>
+                <h3>Scrum</h3>
+                <img data-src="img/scrum-methodology.jpg">
+                <aside class="notes">
+                    <ul>
+                        <li>Companies embraced Scrum as a methodology to become or "do" Agile</li>
+                        <li>Companies that embraces Scrum made improvements, smaller teams, better communication,
+                            smaller scope, smaller iterations, quicker feedback, and all the good things that come
+                            with Scrum…
+                        </li>
+                        <li>But projects still failing and Scrum only focus on management process and
+                            not in technical process.
+                        </li>
+                        <li>Doing only Scrum is not enoguh
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <h3>XP - eXtremme Programming</h3>
+                <img data-src="img/xp-circles.jpg">
+
+                <aside class="notes">
+                    <ul>
+                        <li>Kent Beck and Ron Jeffries I think 1999-2000</li>
+                        <li>Focus on red circle and some of the green. But for me the MOST valuable is the BLUE. The
+                            blue has direct relation with quality and most of the “agile” project are failing for poor
+                            quality.
+                        </li>
+                        <li>I’ve been in different companies that call them self “Agile” so working in their “Agile
+                            environment” what I’ve seen is that these companies use Scrum or Scrumban ( Scrum + Kanban),
+                            quite often as a religion without asking why of the things.
+                        </li>
+                        <li>Agile, is a “philosophy” of software production. Has to be cultural in the company.
+                            You don't do Agile, you should be Agile
+                        </li>
+                        <li>
+                            They don't realize that it requires an organizational change, a change in mind-set and
+                            approach, for one to become truly Agile. Partial adoption is even more dangerous than
+                            non-adoption, because there is a false sense of expectation that the teams will now start to
+                            deliver. An eventual failure leads to maligning the whole method and leads to a belief that
+                            "Agile does not work for us."
+                        </li>
+                        <li>
+                            A manager told me about pair programming:
+                            2 ppl doing one thing when could have 2 ppl doing different things.
+                            It is impossible that these ppl deliver the same….
+
+                            (well u know, probably such manager still thinking that if a woman deliver
+                            in 9 months, 10 women will deliver in 1 month.
+
+                            Wait till they know about mob-programming xD Woody Zuill
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+        <section>
+
+            <section data-background-image="img/agile-manifesto-background.jpg">
+                <h3>Manifesto for Agile Software Development</h3>
+
+                <p>
+                    We are uncovering better ways of developing
+                    software by doing it and helping others do it.
+                    Through this work we have come to value:
+                </p>
+                <ul>
+                    <li class="fragment highlight-red">Individuals and interactions over processes and tools</li>
+                    <li class="fragment highlight-red">Working software over comprehensive documentation</li>
+                    <li class="fragment highlight-red">Customer collaboration over contract negotiation</li>
+                    <li class="fragment highlight-red">Responding to change over following a plan</li>
+                </ul>
+                <p>
+                    That is, while there is value in the items on
+                    the right, we value the items on the left more.
+                </p>
+                <aside class="notes">
+                    <ul>
+                        <li>Working together effectively. A fool with a tool is still a fool.</li>
+                        <li>Show me software not documents</li>
+                        <li>Working close with the customer or Product Owner in daily basis ( and this I think is
+                            violated
+                            somehow in Scrum, after I will dig into it
+                        </li>
+                        <li>Change is a reality of software development. You need a project plan, in fact I would be
+                            worried about any project that didn’t have one. But has to be flexible, has to be soft and
+                            allow changes
+                        </li>
+                    </ul>
+
+                </aside>
+            </section>
+            <section data-background-image="img/tapas.jpg">
+                <blockquote>
+                    "Agile is ordering tapas until you're full, not ordering a 10-course meal" - Neil Killick
+                </blockquote>
+
+                <aside class="notes">
+                    <ul>
+                        <Li>Develop software should be simple, but not easy.</Li>
+
+                        <Li>BTW if u have not been in Lizarran Restaurant u should!</Li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <blockquote>"Build projects around motivated individuals.
+                    Give them the environment and support they need,
+                    and <span class="fragment highlight-red">trust</span> them to get the job done." - 5th Principle
+                    from Agile Manifesto
+                </blockquote>
+
+                <p class="fragment">
+                    The necessity of estimates is the lack of <span class="red">trust</span>
+                </p>
+                <aside class="notes">
+                    An Agile came up to brake this wall and build trust between business and development.
+                </aside>
+            </section>
+            <section>
+                <img data-src="img/no-estimates.jpg">
+                <blockquote class="fragment">
+                    "Customer collaboration over contract negotiation" - Agile Manifesto
+                </blockquote>
+                <aside class="notes">
+                    <ul>
+                        <li>Business might be tempted to ask for estimates to get it as commitment to use later as a
+                            deadline
+                        </li>
+                        <li>Agile is a collaboration model, not a contract model.</li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <blockquote>
+                    "Until each specific feature is understood in detail, it’s impossible to estimate the cost of a
+                    software project accurately." - McConnell
+                </blockquote>
+                <p class="fragment">That's not very Agile.</p>
+
+                <aside class="notes">
+                    Steve McConnell wrote some books, one of them Software Estimation.
+                </aside>
+            </section>
+            <section>
+                <img src="img/bridge_la_pepa.jpg">
+
+                <p class="fragment">date estimated 2011
+                    <span class="red fragment">- terminated on 2015</span>
+                </p>
+
+                <p class="fragment">cost estimated 288 millions
+                    <span class="red fragment">- final cost 506 millions</span>
+                </p>
+            </section>
+            <section><h3>Why estimate?</h3></section>
+            <section>
+                <h3>Prediction</h3>
+                <img class="fragment" data-src="img/cone-of-uncertainty.png">
+                <blockquote class="fragment">
+                    "Working software is the primary measure of progress." - 7th Principle
+                    from Agile Manifesto
+                </blockquote>
+                <aside class="notes">
+                    The cone of uncertainty shows the evolution of the uncertainty on a project and the the risk.
+                    <br/>
+                    Why we have to predict the complexity/time at the beginning when there is more uncertainty.
+
+                </aside>
+            </section>
+            <section>
+                <h3>Prioritisation</h3>
+
+                <p class="fragment">Focus on value not in cost</p>
+
+            </section>
+            <section>
+                <h3>Analysis & Understanding</h3>
+
+                <p class="fragment">Do it but don't make magic numbers from it</p>
+
+                <aside class="notes">
+                    You need planning, but not estimates. Build trust between business and development or between client
+                    and development. You will not need estimates they will have software, they will have features.
+                </aside>
+            </section>
+        </section>
+        <section data-background-image="img/blowmind.gif">
+            <p><br /></p>
+            <aside class="notes">
+                How should I build software
+            </aside>
+        </section>
+        <section>
+            <section>
+                <img src="img/book.jpg">
+                <aside class="notes">
+                    - if didn't read it, read it. U will enjoy.
+                </aside>
+            </section>
+            <section>
+                <h3>The Nature of Software Development</h3>
+
+                <ul>
+                    <li class="fragment">Organising By Feature</li>
+                    <li class="fragment">Planning Feature by Feature</li>
+                    <li class="fragment">Building the product, feature by feature</li>
+                    <li class="fragment">Slice features thinly</li>
+                    <li class="fragment">Build quality in every day</li>
+                </ul>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Organise teams around the features we need</li>
+                        <li>Plan in term of features. We produce highest value first.</li>
+                        <li>Build based on features, including the architecture and infrastructure we need as we go</li>
+                        <li>Slice each desired capability down to the smallest possible value-bearing size</li>
+                        <li>Build value continuously, sustainably, indefinitely.</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section>
+                <h3>Slicing heuristic</h3>
+
+                <blockquote>“A user story ready to be worked on must have only one acceptance test." - Neil Killick
+                </blockquote>
+
+                <aside class="notes">
+                    <ul>
+                        <li>Slice features till the smallest possible value-bearing till one acceptance test for
+                            feature.
+                        </li>
+                        <li>Then all features will have a similar size.
+                        </li>
+                        <li>If u need a speed of a team in each sprint just count features</li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+        <section>
+            <h2>THANK YOU!</h2>
+
+            <h3>Contact me</h3>
+            <ul style="list-style: none">
+                <li>jsalinaspolo@gmail.com</li>
+                <li><img src="img/twitter.ico" style="vertical-align: middle; margin-right: 10px"> @MuSTa1nE</li>
+                <li>blog: <a href="http://www.jspcore.com">http://www.jspcore.com</a></li>
+            </ul>
+        </section>
+    </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                return !!document.querySelector('pre code');
+            }, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>
