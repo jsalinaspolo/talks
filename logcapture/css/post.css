@@ -1,0 +1,13 @@
+.reveal section img {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.reveal blockquote {
+    background: rgba(227, 206, 171, 1);
+}
+
+p span.red {
+    color: red;
+}
