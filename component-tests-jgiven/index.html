@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>LogCapture</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css">
+    <link rel="stylesheet" href="css/post.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Behavior-driven development</h1>
+            <p>
+                <small>by <a href="http://jspcore.com">Javier Salinas</a> / <a href="http://twitter.com/MuSTa1nE">@MuSTa1nE</a>
+                </small>
+            </p>
+        </section>
+        <section>
+            <h1>Cucumber</h1>
+            <section>
+                <pre><code data-trim data-noescape>
+Feature: Eating too many cucumbers may not be good for you
+
+  Scenario: Eating a few is no problem
+    Given Alice is hungry
+    When she eats 3 cucumbers
+    Then she will be full
+            </code></pre>
+            </section>
+            <section>
+                <h2>Good</h2>
+                <ul style="list-style: none">
+                    <li>Written in English</li>
+                    <li>Easy to define</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Bad</h2>
+                <ul style="list-style: none">
+                    <li>Hard to maintain</li>
+                    <li>Code is secondary</li>
+                    <li>No interaction between Business and Development</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h1>Spock - BDD</h1>
+            <section>
+            <pre><code data-trim data-noescape>
+def "Eating a few is no problem"(){
+       given: "Alice is hungry"
+           ...
+       when: "she eats 3 cucumbers"
+           ...
+       then: "she will be full"
+           ...
+   }
+            </code></pre>
+            </section>
+            <section>
+                <h2>Good</h2>
+                <ul style="list-style: none">
+                    <li>Groovy</li>
+                    <li>Code and Specification comes together</li>
+                    <li>Written by "developers"</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Bad</h2>
+                <ul style="list-style: none">
+                    <li>Hard to re-use</li>
+                    <li>DSL are hard to build</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h1>JGiven</h1>
+            <section>
+            <pre><code data-trim data-noescape>
+    @Test public void
+    eating_a_few_is_no_problem() {
+      given().$_is_hungry("Alice")
+      when().she_eats_$_cucumbers(3)
+      then().she_will_be_full()
+    }
+            </code></pre>
+            </section>
+            <section>
+                <h2>Good</h2>
+                <ul style="list-style: none">
+                    <li>Code is first class citizen - Specification is the result</li>
+                    <li>Written by developers</li>
+                    <li>Communication between business and developers</li>
+                    <li>Easy to maintain</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Bad</h2>
+                <ul style="list-style: none">
+                    <li>Sometimes can be a bit verbose</li>
+                    <li>Use annotations for sharing state between stages</li>
+                    <li>Another library</li>
+                </ul>
+            </section>
+        </section>
+        </section>
+        <section>
+            <h1>STOP IT</h1>
+            <small>Too biased</small>
+            <p>SHOW ME SOME CODE</p>
+        </section>
+        <section>
+            <h1>Write test as documentation</h1>
+            <small>Helps business and devs to have ubiquitous language and understand better the domain</small>
+        </section>
+        <section>
+            <h2>THANK YOU!</h2>
+
+            <h3>Contact me</h3>
+            <ul style="list-style: none">
+                <li>jsalinaspolo@gmail.com</li>
+                <li><img src="img/twitter.ico" style="vertical-align: middle; margin-right: 10px"> @MuSTa1nE</li>
+                <li>blog: <a href="http://www.jspcore.com">http://www.jspcore.com</a></li>
+            </ul>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
