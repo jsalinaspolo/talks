@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>LogCapture</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css">
+    <link rel="stylesheet" href="css/post.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+
+
+
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Timeless Streams</h1>
+            <small>Decoupling events from time</small>
+            <p>
+                <small>by <a href="http://jspcore.com">Javier Salinas</a> / <a href="http://twitter.com/MuSTa1nE">@MuSTa1nE</a>
+                </small>
+            </p>
+        </section>
+        <section>
+            <img src="img/scbcn-sponsors.png"/>
+        </section>
+        <section>
+            <h3>About me</h3>
+            <aside class="notes">
+                <ul>
+                    <li>Software Developer</li>
+                    <li>I am from Barcelona and after being working for a Business Consultancy company here.
+                        I realised that to continue working close to the technology I had to leave
+                    </li>
+                    <li>I went to Moscow and from there to London, where I went for 3 years...
+                        Now I am already 3 years and planning 3 years more.
+                    </li>
+                    <li>I am a passionate developer and motivated in simple designs, clean code, TDD, DDD and so on</li>
+                </ul>
+            </aside>
+        </section>
+        <section>
+            <h1>Definition of Time</h1>
+            <section>
+                <blockquote>
+                    "The <span class="fragment highlight-blue" data-fragment-index="1"><bold>indefinite</bold></span>
+                    continued progress of existence and <span class="fragment highlight-bold" data-fragment-index="1">events</span>
+                    in the past, present and future regarded
+                    as a whole" <br>Oxford Dictionary
+                </blockquote>
+            </section>
+            <section>
+                <blockquote>
+                    "A continuous, measurable quantity in which <span class="fragment highlight-blue">events occur in a
+                                                                      sequence</span>
+                    proceeding from the past
+                    through the present to the future" <br> Science Dictionary
+                </blockquote>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Event Sourcing</h1>
+                <p> With event sourcing, instead of storing the “current” state of the entities that are used in our
+                    system, we store a stream of events that relate to these entities.</p>
+                <p>Events are immutable</p>
+            </section>
+            <section>
+                <h1>Kafka</h1>
+                <p>Append-only log - blah blah</p>
+            </section>
+            <section>
+                <h1>Kafka Streams</h1>
+                <p>Stream processing - single event loop/ single thread - blah blah</p>
+            </section>
+        </section>
+
+        <section>
+            <h1>Bank system</h1>
+            <section><p>Bank Transactions</p></section>
+            <section><p>Credit Cards</p></section>
+            <section><p>Deposits</p></section>
+        </section>
+        <section>
+            <section><p>Real time events</p></section>
+            <section><p>Daily processor</p></section>
+            <section><p>Monthly calculations</p></section>
+        </section>
+
+        <section>
+            <h1>Real time events</h1>
+            <p>Diagram - kafka streams transformer</p>
+            <p>No issues</p>
+        </section>
+
+        <section>
+            <h1>Daily processor</h1>
+            <p>Make daily calculations - based on the transactions </p>
+            <p>Problems - when to run?</p>
+            <p>Problems - how to know you have all real time events?</p>
+        </section>
+        <section>
+            <h1>Monthly processor</h1>
+            <p>Make monthly calculations - based on daily calculations</p>
+            <p>Problems - when to run?</p>
+            <p>Problems - how to know you have all real time events?</p>
+        </section>
+
+        <section>
+            <h1>Time</h1>
+            <p>Systems based on tyme are weak</p>
+            <p>Are difficult to test</p>
+            <p>Difficult to reproduce</p>
+            <p>Consuming the same events - can get different resulsts</p>
+        </section>
+        <section>
+            <h1>So how do I know when to run?</h1>
+            <p>Make your definition of time</p>
+            <p>Create an event (based on time) and react to it</p>
+            <p>diagram</p>
+            <p>now you have a system based on time but look at the stack</p>
+        </section>
+        <section>
+            <h1>Back to daily processor</h1>
+            <p>React to the event of marker</p>
+            <p>Now you know you have read all the events - order is guarantee per partition</p>
+            <p>The events of a credit card are sorted</p>
+            <p>Create a result event</p>
+        </section>
+        <section>
+            <h1>Back to monthly processor</h1>
+            <p>React to the event of marker</p>
+            <p>The marker contain the date, check if is time to run</p>
+            <p>Diagram</p>
+            <p>bla bla</p>
+        </section>
+
+        <section>
+            <h2>THANK YOU!</h2>
+
+            <h3>Contact me</h3>
+            <ul style="list-style: none">
+                <li>jsalinaspolo@gmail.com</li>
+                <li><img src="img/twitter.ico" style="vertical-align: middle; margin-right: 10px"> @MuSTa1nE</li>
+                <li>blog: <a href="http://www.jspcore.com">http://www.jspcore.com</a></li>
+            </ul>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+
+
+</script>
+</body>
+</html>
