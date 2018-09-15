@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>LogCapture</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css">
+    <link rel="stylesheet" href="css/post.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Timeless Streams</h1>
+            <small>Decoupling events from time</small>
+            <p>
+                <small>by <a href="http://jspcore.com">Javier Salinas</a> / <a href="http://twitter.com/MuSTa1nE">@MuSTa1nE</a>
+                </small>
+            </p>
+        </section>
+        <section data-background="img/scbcn-sponsors.png">
+        </section>
+        <section>
+            <h3>About me</h3>
+            <aside class="notes">
+                <p>Ask about the audience experience</p>
+            </aside>
+        </section>
+        <section>
+            <h1>Definition of Time</h1>
+            <section>
+                <blockquote class="fragment" data-fragment-index="0">
+                    "The <span class="fragment highlight-blue" data-fragment-index="1"><bold>indefinite</bold></span>
+                    continued progress of existence and <span class="fragment highlight-blue" data-fragment-index="1">events</span>
+                    in the past, present and future regarded
+                    as a whole" <br>Oxford Dictionary
+                </blockquote>
+            </section>
+            <section>
+                <blockquote class="fragment">
+                    "A continuous, measurable quantity in which <span class="fragment highlight-blue">events occur in a
+                                                                      sequence</span>
+                    proceeding from the past
+                    through the present to the future" <br> Science Dictionary
+                </blockquote>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Event Sourcing</h1>
+                <span class="fragment">
+                    <p>
+                    With event sourcing, instead of storing the “current” state of the entities that are used in our
+                    system, we store a <span class="fragment highlight-blue">sequence of events</span> that relate to
+                    these
+                    entities.
+                    </p>
+                <p>Events are immutable</p>
+                </span>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Log</h1>
+                <span class="fragment">
+
+                <p>A Log is <span class="fragment highlight-blue">immutable, ordered, append-only</span> and persistent
+                    data structure. It’s a very simple structure,
+                    but it is very powerful.
+                </p>
+                <p>Logs have a specific purpose: they record what happened, when and where.</p>
+                </span>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Kafka</h1>
+                <small>Kafka is a distributed streaming platform</small>
+                <br>
+                <img class="stretch" src="img/kafka-log.png"/>
+
+                <p><span class="fragment highlight-blue">Order is guaranteed</span> within a
+                    partition in a topic.</p>
+                <p>Each partition is a log.</p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Real time processing</h1>
+            </section>
+            <section>
+                <img class="stretch" src="img/realtime-processing.png"/>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Daily processor</h1>
+            </section>
+            <section>
+                <section>
+                    <img class="stretch" src="img/daily-processing.png"/>
+                </section>
+            </section>
+        </section>
+        <section>
+            <h1>Problems</h1>
+            <ul>
+                <li class="fragment" data-fragment-index="1">Time based systems are weak</li>
+                <li class="fragment" data-fragment-index="2">Are hard to test</li>
+                <li class="fragment" data-fragment-index="3">Difficult to reproduce</li>
+                <li class="fragment" data-fragment-index="4">Results might not be repeatable</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Decouple from time</h1>
+            <ul>
+                <li class="fragment" data-fragment-index="1">Isolate time</li>
+                <li class="fragment" data-fragment-index="2">Make your time definition - as an event</li>
+                <li class="fragment" data-fragment-index="3">React</li>
+            </ul>
+        </section>
+        <section>
+            <section>
+                <h1>Daily processor</h1>
+            </section>
+            <section>
+                <img class="stretch" src="img/marker-processing.png"/>
+            </section>
+            <section>
+                <h1>Using Markers</h1>
+                <ul>
+                    <li class="fragment" data-fragment-index="1">Guarantees all events has been processed</li>
+                    <li class="fragment" data-fragment-index="2">Make an event as a result</li>
+                    <li class="fragment" data-fragment-index="3">React to events - not to time</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h1>Wrapping Up</h1>
+            <ul>
+                <li class="fragment" data-fragment-index="1">Time based systems are weak and hard to test</li>
+                <li class="fragment" data-fragment-index="2">Isolate time</li>
+                <li class="fragment" data-fragment-index="3">Be reactive to events - not to time</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Questions?</h1>
+        </section>
+        <section>
+            <h1>THANK YOU!!</h1>
+            <ul style="list-style: none">
+                <li>jsalinaspolo@gmail.com</li>
+                <li><img src="img/twitter.ico" style="vertical-align: middle; margin-right: 10px"> @MuSTa1nE</li>
+                <li>blog: <a href="http://www.jspcore.com">http://www.jspcore.com</a></li>
+            </ul>
+        </section>
+        <section>
+            <img class="stretch" src="img/zopa.jpg"/>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
